@@ -2,9 +2,14 @@
 
 ## Instalación
 
+Instalar el concatenador y minificador de archivos css y js
 ```shell
-memotest-farandulero$ npm install
+$ npm install
 ```
+
+Concatenar y minificar los archivos
 ```shell
-memotest-farandulero$ grunt
+$ grunt
 ```
+
+El servidor debe apuntar a la carpeta `public`
