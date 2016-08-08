@@ -1,0 +1,27 @@
+{
+  "name": "memotest-farandulero",
+  "version": "0.0.1",
+  "description": "El memotest de la farándula",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/charly300/memotest-farandulero.git"
+  },
+  "author": "charly300",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charly300/memotest-farandulero/issues"
+  },
+  "homepage": "https://github.com/charly300/memotest-farandulero#readme",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
+}
