@@ -28,7 +28,7 @@
 
 .flip-container.rotate .flipper, 
 .flip-container.rotate .flipper {
-	transform: rotateY(180deg);
+	transform: rotateY(540deg);
 }
 
 .flipper {
