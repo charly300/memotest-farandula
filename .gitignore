@@ -3,3 +3,4 @@ node_modules/
 public/css/styles.min.css
 public/js/scripts.min.js
 public/js/app.min.js
+public/views

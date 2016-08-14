@@ -1,4 +1,3 @@
-/*
 (function() {
 	'use strict';
 
@@ -6,14 +5,16 @@
 		.module('app')
 		.config(config);
 
+	config.$inject = ['$routeProvider'];
+
 	function config($routeProvider) {
 
 		$routeProvider
 			.when('/', {
-				template: '<h1>Memotest</h1>',
+				templateUrl: 'views/pages/start.html',
 				controller: 'AppController',
+				controllerAs: 'app',
 			});
 	}
 
 })();
-*/

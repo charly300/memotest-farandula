@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 			  	'app/shared/**/**.js',
 			  ],
 			  dest: 'assets/prod/js/app.js',
-			}
+			},
 		},
 
 		cssmin: {
@@ -41,14 +41,28 @@ module.exports = function(grunt) {
 		    },
 		},
 
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: [{
+					src: 'app/pages/start/start.html',
+					dest: 'public/views/pages/start.html'
+				}]
+		   }
+		}
+
 	});	
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 	grunt.registerTask('css', ['concat:css', 'cssmin']);
 	grunt.registerTask('js', ['concat:js', 'uglify:js']);
 	grunt.registerTask('angular', ['concat:angular', 'uglify:angular']);
-	grunt.registerTask('default', ['css', 'js']);
+	grunt.registerTask('html', ['htmlmin']);
 }
