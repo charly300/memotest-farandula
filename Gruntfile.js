@@ -11,6 +11,14 @@ module.exports = function(grunt) {
 			js: {
 			  src: ['assets/dev/js/**.js'],
 			  dest: 'assets/prod/js/scripts.js',
+			},
+			angular: {
+			  src: [
+			  	'app/app.module.js',
+			  	'app/app.routes.js',
+			  	'app/shared/**/**.js',
+			  ],
+			  dest: 'assets/prod/js/app.js',
 			}
 		},
 
@@ -27,15 +35,10 @@ module.exports = function(grunt) {
 		},
 
 		uglify: {
-		    js: {
-		      files: [{
-		      	expand: true,
-		        cwd: 'assets/prod/js',
-		        src: 'scripts.js',
-		        dest: 'public/js',
-		        ext: '.min.js',
-		      }]
-		    }
+		    angular: {
+		     	src: ['assets/prod/js/app.js'],
+		     	dest: 'public/js/app.min.js',
+		    },
 		},
 
 	});	
@@ -45,6 +48,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('css', ['concat:css', 'cssmin']);
-	grunt.registerTask('js', ['concat:js', 'uglify']);
+	grunt.registerTask('js', ['concat:js', 'uglify:js']);
+	grunt.registerTask('angular', ['concat:angular', 'uglify:angular']);
 	grunt.registerTask('default', ['css', 'js']);
 }

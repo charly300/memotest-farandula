@@ -5,18 +5,11 @@
 	<link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body data-ng-app="app">
-	<div class="card-container flip-container">
-		<div class="flipper card">
-			<div class="front">
-				<img src="img/ass.jpg">
-			</div>
-			<div class="back">
-				<img src="img/reverse.jpg">
-			</div>
-		</div>
+	<div data-ng-controller="AppController as app">
+		<div data-ng-bind="app.title"></div>
 	</div>
 	<script src="js/lib/angular-1.5.8.min.js"></script>
 	<script src="js/lib/angular-route-1.5.8.min.js"></script>
-	<script src="js/scripts.min.js"></script>
+	<script src="js/app.min.js"></script>
 </body>
 </html>
