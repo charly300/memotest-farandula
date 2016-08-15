@@ -11,9 +11,14 @@
 
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/pages/start.html',
-				controller: 'AppController',
-				controllerAs: 'app',
+				templateUrl: 'views/pages/start/start.html',
+				controller: 'StartController',
+				controllerAs: 'start',
+			})
+			.when('/game', {
+				templateUrl: 'views/pages/game/game.html',
+				controller: 'GameController',
+				controllerAs: 'game',
 			});
 	}
 

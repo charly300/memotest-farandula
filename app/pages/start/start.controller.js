@@ -5,10 +5,15 @@
 		.module('app')
 		.controller('StartController', StartController);
 
-	function StartController() {
-		var vm = this;
+	StartController.$inject = ['$location', 'game'];
 
-		vm.title = 'Start';
+	function StartController($location, game) {
+		var vm = this;
+		
+		vm.start = function() {
+			game.start({cantPlayers: 2});
+			$location.path('/game');
+		};
 	}
 	
 })();

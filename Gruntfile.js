@@ -16,7 +16,10 @@ module.exports = function(grunt) {
 			  src: [
 			  	'app/app.module.js',
 			  	'app/app.routes.js',
-			  	'app/shared/**/**.js',
+			  	'app/shared/core/**.js',
+			  	'app/shared/services/**.js',
+			  	'app/components/**/**.js',
+			  	'app/pages/**/**.js',
 			  ],
 			  dest: 'assets/prod/js/app.js',
 			},
@@ -48,9 +51,11 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: [{
-					src: 'app/pages/start/start.html',
-					dest: 'public/views/pages/start.html'
-				}]
+			        expand: true,
+			        cwd: 'app',
+			        src: '**/**/*.html',
+			        dest: 'public/views/'
+			    }]
 		   }
 		}
 
@@ -65,4 +70,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('js', ['concat:js', 'uglify:js']);
 	grunt.registerTask('angular', ['concat:angular', 'uglify:angular']);
 	grunt.registerTask('html', ['htmlmin']);
+	
+	grunt.registerTask('default', ['css', 'js', 'angular', 'html']);
 }
