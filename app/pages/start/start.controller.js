@@ -11,8 +11,13 @@
 		var vm = this;
 		
 		vm.start = function() {
-			game.start({cantPlayers: 2});
-			$location.path('/game');
+			game.start({
+				cantPlayers: 2
+			}).then(function() {
+				$location.path('/game');
+			}).catch(function(error) {
+				console.error(error);
+			});
 		};
 	}
 	

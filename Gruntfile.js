@@ -8,10 +8,6 @@ module.exports = function(grunt) {
 			  dest: 'assets/prod/css/styles.css',
 			},
 
-			js: {
-			  src: ['assets/dev/js/**.js'],
-			  dest: 'assets/prod/js/scripts.js',
-			},
 			angular: {
 			  src: [
 			  	'app/app.module.js',
@@ -41,7 +37,7 @@ module.exports = function(grunt) {
 		    angular: {
 		     	src: ['assets/prod/js/app.js'],
 		     	dest: 'public/js/app.min.js',
-		    },
+		    }
 		},
 
 		htmlmin: {
@@ -57,6 +53,14 @@ module.exports = function(grunt) {
 			        dest: 'public/views/'
 			    }]
 		   }
+		},
+
+		minjson: {
+			compile: {
+				files: {
+					'public/js/cards.json' : 'assets/dev/js/cards.json',
+				}
+			}
 		}
 
 	});	
@@ -65,10 +69,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-minjson');
 
 	grunt.registerTask('css', ['concat:css', 'cssmin']);
 	grunt.registerTask('js', ['concat:js', 'uglify:js']);
-	grunt.registerTask('angular', ['concat:angular', 'uglify:angular']);
+	grunt.registerTask('angular', ['concat:angular', 'uglify:angular', 'minjson']);
 	grunt.registerTask('html', ['htmlmin']);
 	
 	grunt.registerTask('default', ['css', 'js', 'angular', 'html']);

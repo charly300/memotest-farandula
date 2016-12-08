@@ -5,6 +5,4 @@ function Player(name) {
 
 	self.name = name;
 	self.points = 0;
-	
-	console.log('Estoy creando: ' + self.name);
 }
