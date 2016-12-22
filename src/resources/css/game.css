@@ -1,0 +1,16 @@
+.card {
+    background: hsl(0, 0%, 76%);
+    cursor: pointer;
+    height: 125px;
+    margin: 10px;
+    width: 100px;
+}
+
+.card.selected {
+    box-shadow: 0px 0px 7px;
+}
+
+.card.disabled {
+    background: hsl(0, 0%, 85%);
+    cursor: not-allowed;
+} 

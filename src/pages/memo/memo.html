@@ -1,0 +1,17 @@
+<template>
+    <div class="players">
+        <div class="${!player? 'player active' : 'player' }">
+            <div class="player-name">${game.players[0].name}</div>
+            <div class="player-score">${game.players[0].score}</div>
+        </div>        
+        <div class="${player? 'player active' : 'player' }">
+            <div class="player-name">${game.players[1].name}</div>
+            <div class="player-score">${game.players[1].score}</div>
+        </div>
+    </div>
+    <div class="board">
+        <div class="card ${card.selected? 'selected' : ''} ${card.selectable? '' : 'disabled'}" click.delegate="select(card)" repeat.for="card of game.board.cards">
+            <div class="card-value">${card.value}</div>
+        </div>
+    </div>
+</template>
